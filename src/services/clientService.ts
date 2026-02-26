@@ -1,24 +1,23 @@
 
+import 'dotenv/config';
 import { Chain, defineChain } from 'viem';
 import {
   createPublicClient,
+  createWalletClient,
   http,
   PublicClient,
+  WalletClient,
 } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { types } from '@storagehub/types-bundle';
+import { StorageHubClient } from '@storagehub-sdk/core';
 
-// --- REMOVED ALL PRIVATE KEY AND WALLETCLIENT INITIALIZATION CODE FOR SECURITY ---
+if (!process.env.PRIVATE_KEY) {
+  throw new Error('PRIVATE_KEY environment variable is not set.');
+}
 
 const NETWORKS = {
-  devnet: {
-    id: 181222,
-    name: 'DataHaven Local Devnet',
-    rpcUrl: 'http://127.0.0.1:9666',
-    wsUrl: 'ws://127.0.0.1:9944',
-    mspUrl: 'http://127.0.0.1:8080/',
-    nativeCurrency: { name: 'StorageHub', symbol: 'SH', decimals: 18 },
-  },
   testnet: {
     id: 55931,
     name: 'DataHaven Testnet',
@@ -36,12 +35,22 @@ const chain: Chain = defineChain({
   rpcUrls: { default: { http: [NETWORKS.testnet.rpcUrl] } },
 });
 
+// --- Accounts & Clients Initialization ---
+const account = privateKeyToAccount(process.env.PRIVATE_KEY as `0x${string}`);
+const address = account.address;
+
+const walletClient: WalletClient = createWalletClient({
+  account,
+  chain,
+  transport: http(NETWORKS.testnet.rpcUrl),
+});
+
 const publicClient: PublicClient = createPublicClient({
   chain,
   transport: http(NETWORKS.testnet.rpcUrl),
 });
 
-// Create Polkadot API client
+// --- Polkadot & StorageHub Client Initialization ---
 const provider = new WsProvider(NETWORKS.testnet.wsUrl);
 const polkadotApi: ApiPromise = await ApiPromise.create({
   provider,
@@ -49,12 +58,14 @@ const polkadotApi: ApiPromise = await ApiPromise.create({
   noInitWarn: true,
 });
 
-// NOTE: WalletClient and StorageHubClient must now be created dynamically
-// after connecting to a user's wallet (e.g., MetaMask).
-// The hardcoded private key has been removed.
+const storageHubClient = new StorageHubClient({ polkadotApi, walletClient });
 
 export {
   publicClient,
   polkadotApi,
   chain,
+  walletClient,
+  address,
+  account,
+  storageHubClient,
 };
