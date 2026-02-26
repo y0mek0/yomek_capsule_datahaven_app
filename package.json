@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "serve": "serve",
     "serve:api": "node deploy.cjs",
