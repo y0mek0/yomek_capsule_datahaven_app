@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp -r src/files dist/",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "serve": "serve",
