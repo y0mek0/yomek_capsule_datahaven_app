@@ -59,7 +59,12 @@ const polkadotApi: ApiPromise = await ApiPromise.create({
   noInitWarn: true,
 });
 
-const storageHubClient = new StorageHubClient({ polkadotApi, walletClient });
+const storageHubClient = new StorageHubClient({
+    rpcUrl: NETWORKS.testnet.rpcUrl,
+    chain: chain,
+    walletClient: walletClient,
+    filesystemContractAddress: '0x0000000000000000000000000000000000000404' as `0x${string}`,
+});
 
 export {
   publicClient,
