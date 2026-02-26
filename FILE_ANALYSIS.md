@@ -1,0 +1,27 @@
+# File Analysis
+
+- **.gitignore:** Specifies intentionally untracked files to be ignored by Git.
+- **PROJECT_BRIEF.md:** A brief description of the project's functionality.
+- **blockchain.js:** Contains the ABI and contract address for interacting with the blockchain.
+- **deploy.cjs:** A script for deploying the smart contract.
+- **error_log.txt:**  A log file for errors.
+- **ethers.js:** A library for interacting with the Ethereum blockchain.
+- **get-abi.js, get-abi.ts:** Scripts to get the ABI of a contract.
+- **hardhat.config.cjs:** Configuration file for the Hardhat development environment.
+- **index.html:** The main HTML file for the website.
+- **migration_plan.txt:** A text file for the migration plan.
+- **package.json:** Defines the project's dependencies and scripts.
+- **pnpm-lock.yaml:** A lockfile for the pnpm package manager.
+- **project_idea.txt:** A text file for the project idea.
+- **roulette.js:** A JavaScript file for a roulette game (likely unused).
+- **style.css:** The CSS file for the website.
+- **test-runner.js, test-runner.ts:** Scripts for running tests.
+- **tsconfig.json:** Configuration file for the TypeScript compiler.
+- **.idx/airules.md, .idx/dev.nix, .idx/mcp.json:** IDE-specific configuration files.
+- **assets/:** A directory containing images and other assets for the website.
+- **contracts/Capsule.sol:** The Solidity smart contract for the Capsule NFT.
+- **operations/:** Contains scripts for blockchain operations.
+- **scripts/deploy.cjs, scripts/deploy.js:** Deployment scripts.
+- **services/:** Contains services for interacting with the blockchain.
+- **utils/fhevm-utils.js, utils/fhevm-utils.ts:** Utilities for working with the FHEVM.
+- **all_necessary/:** A directory containing information about the tools to be used.

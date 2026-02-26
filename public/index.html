@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Block Capsule</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "ethers": "https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.esm.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#" id="capsule-nav">CAPSULE</a></li>
+                    <li><a href="#" id="inventory-nav">INVENTORY</a></li>
+                </ul>
+            </nav>
+            <div class="wallet-info">
+                <span id="user-address"></span>
+                <button class="connect-btn">CONNECT</button>
+            </div>
+        </header>
+
+        <!-- Capsule View -->
+        <main>
+            <div class="main-content">
+                <h1>CORE BLOCK CAPSULE</h1>
+                <button class="open-btn">OPEN</button>
+            </div>
+            <div class="capsule-image">
+                <img src="assets/capsule.png" alt="Capsule">
+            </div>
+        </main>
+        <section class="capsule-contents">
+            <h2>CAPSULE CONTENTS:</h2>
+            <div class="grid">
+                <!-- Grid items... -->
+                <div class="grid-item">
+                    <img src="assets/cardano.png" alt="Cardano">
+                    <p>Cardano</p>
+                    <span>Lotus Garden</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/bnb.png" alt="BNB">
+                    <p>BNB</p>
+                    <span>Lion's Arena</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/monero.png" alt="Monero">
+                    <p>Monero</p>
+                    <span>Shadow Agent</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/solana.png" alt="Solana">
+                    <p>Solana</p>
+                    <span>Hyperspeed Racer</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/tron.png" alt="TRON">
+                    <p>TRON</p>
+                    <span>Jetpack Entertainer</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/ethereum.png" alt="Ethereum">
+                    <p>Ethereum</p>
+                    <span>Contract Architect</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/bitcoin-cash.png" alt="Bitcoin Cash">
+                    <p>Bitcoin Cash</p>
+                    <span>Cash Flow</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/bitcoin.png" alt="Bitcoin">
+                    <p>Bitcoin</p>
+                    <span>Digital Gold Digger</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/zcash.png" alt="Zcash">
+                    <p>Zcash</p>
+                    <span>Invisible Safe</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/tether.png" alt="Tether">
+                    <p>Tether</p>
+                    <span>Immovable Anchor</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/usdc.png" alt="USDC">
+                    <p>USDC</p>
+                    <span>Lady Stability</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/avalanche.png" alt="Avalanche">
+                    <p>Avalanche</p>
+                    <span>Ice Titan</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/litecoin.png" alt="Litecoin">
+                    <p>Litecoin</p>
+                    <span>Silver Storm</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/zama.png" alt="Zama">
+                    <p>Zama</p>
+                    <span>Puzzle</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/stellar.png" alt="Stellar">
+                    <p>Stellar</p>
+                    <span>Galactic Portal</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inventory View -->
+        <section id="inventory-section" class="hidden">
+            <div class="inventory-header">
+                <div class="address-input-container">
+                    <input type="text" placeholder="Enter address" class="address-input" id="address-input" name="address">
+                    <button class="go-btn">GO</button>
+                    <button class="back-btn">&#8592; BACK</button>
+                </div>
+                <div class="filter-container">
+                    <button class="filter-btn" data-sort="newest">NEWEST</button>
+                    <button class="filter-btn" data-sort="rarity">RARITY</button>
+                </div>
+            </div>
+            <div id="inventory-grid" class="grid">
+                <!-- Inventory items will be injected here by JS -->
+            </div>
+        </section>
+
+        <aside class="social">
+            <p>by yomek</p>
+            <a href="#"><img src="assets/discord.svg" alt="Discord"></a>
+            <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
+        </aside>
+    </div>
+
+    <!-- Roulette Overlay -->
+    <div id="roulette-overlay">
+        <div id="roulette-container">
+            <div id="roulette-reel"></div>
+            <div id="roulette-marker"></div>
+        </div>
+    </div>
+
+    <!-- Winner Display Overlay -->
+    <div id="winner-overlay">
+        <div class="winner-content">
+            <div id="winner-card-container">
+                <div id="winner-card">
+                    <img src="" alt="Winning Item">
+                </div>
+            </div>
+            <div id="winner-buttons">
+                <button id="open-again-btn" class="winner-btn">OPEN AGAIN</button>
+                <button id="close-winner-btn" class="winner-btn">CLOSE</button>
+            </div>
+        </div>
+    </div>
+
+    <script defer type="module" src="blockchain.js"></script>
+    <script defer type="module" src="roulette.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "yomek_capsule_datahaven_app",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx src/index.ts",
+    "serve": "serve",
+    "serve:api": "node deploy.cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.24.0",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@openzeppelin/contracts": "^5.4.0",
+    "@polkadot/api": "^16.5.4",
+    "@polkadot/keyring": "^14.0.1",
+    "@polkadot/types": "^16.5.4",
+    "@storagehub-sdk/core": "^0.4.4",
+    "@storagehub-sdk/msp-client": "^0.4.4",
+    "@storagehub/api-augment": "^0.2.14",
+    "@storagehub/types-bundle": "^0.2.9",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "hardhat": "^2.26.0",
+    "serve": "^14.2.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.9.3",
+    "viem": "^2.46.2"
+  }
+}

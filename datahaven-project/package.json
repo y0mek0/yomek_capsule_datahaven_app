@@ -1,0 +1,25 @@
+{
+  "name": "datahaven-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.24.0",
+  "dependencies": {
+    "@polkadot/api": "^16.5.4",
+    "@polkadot/types": "^16.5.4",
+    "@storagehub-sdk/core": "^0.4.4",
+    "@storagehub-sdk/msp-client": "^0.4.4",
+    "@storagehub/api-augment": "^0.2.14",
+    "@storagehub/types-bundle": "^0.2.9",
+    "@types/node": "^25.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "viem": "^2.46.2"
+  }
+}
