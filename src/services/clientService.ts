@@ -36,7 +36,8 @@ const chain: Chain = defineChain({
 });
 
 // --- Accounts & Clients Initialization ---
-const account = privateKeyToAccount(process.env.PRIVATE_KEY as `0x${string}`);
+const privateKey = `0x${process.env.PRIVATE_KEY}`;
+const account = privateKeyToAccount(privateKey as `0x${string}`);
 const address = account.address;
 
 const walletClient: WalletClient = createWalletClient({
