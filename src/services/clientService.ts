@@ -60,6 +60,7 @@ const polkadotApi: ApiPromise = await ApiPromise.create({
 });
 
 const storageHubClient = new StorageHubClient({
+    polkadotApi: polkadotApi,
     rpcUrl: NETWORKS.testnet.rpcUrl,
     chain: chain,
     walletClient: walletClient,
